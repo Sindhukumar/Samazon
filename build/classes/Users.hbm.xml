@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="Users" table="Users">
+      <meta attribute="class-description">
+         This class contains the User detail. 
+      </meta>
+      <id name="userid" type="int" column="userid">
+         <generator class="sequence">
+            <param name="sequence">SEQ_GEN_IDENTITY</param>
+          </generator>
+      </id>
+      <property name="username" column="username" type="string"/>
+      <property name="userpassword" column="userpassword" type="string"/>
+      <property name="userrole" column="userrole" type="string"/>
+      <property name="useremail" column="useremail" type="string"/>
+   </class>
+</hibernate-mapping>
