@@ -1,21 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC 
  "-//Hibernate/Hibernate Mapping DTD//EN"
- "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-   <class name="Users" table="Users">
-      <meta attribute="class-description">
-         This class contains the User detail. 
-      </meta>
-      <id name="userid" type="int" column="userid">
-         <generator class="sequence">
-            <param name="sequence">SEQ_GEN_IDENTITY</param>
-          </generator>
-      </id>
-      <property name="username" column="username" type="string"/>
-      <property name="userpassword" column="userpassword" type="string"/>
-      <property name="userrole" column="userrole" type="string"/>
-      <property name="useremail" column="useremail" type="string"/>
-   </class>
+	<class name="Hiber.Users" table="samazonusers">
+		<meta attribute="class-description">
+			This class contains the User detail.
+		</meta>
+		<id name="userid" type="int" column="userid">
+			<generator class="sequence">
+				<param name="sequence">SEQ_GEN_IDENTITY</param>
+			</generator>
+		</id>
+		<property name="username" column="username" type="string" />
+		<property name="userpassword" column="userpassword" type="string" />
+		<property name="userrole" column="userrole" type="string" />
+		<property name="useremail" column="useremail" type="string" />
+	</class>
+	<class name="Hiber.Product" table="products">
+		<meta attribute="class-description">
+			This class contains the product detail.
+		</meta>
+		<id name="productid" type="int" column="productid">
+			<generator class="sequence">
+				<param name="sequence">SEQ_GEN_IDENTITY</param>
+			</generator>
+		</id>
+		<property name="productname" column="productname" type="string" />
+		<property name="productdescription" column="productdescription"
+			type="string" />
+		<property name="price" column="price" type="double" />
+		<property name="instock" column="instock" type="double" />
+	</class>
+
+	<class name="Hiber.Invoice" table="invoice">
+		<meta attribute="class-description">
+			This class contains the Invoice detail.
+		</meta>
+		<id name="invoiceid" type="int" column="invoiceid">
+			<generator class="sequence">
+				<param name="sequence">SEQ_GEN_IDENTITY</param>
+			</generator>
+		</id>
+		<property name="invoicedate" column="invoicedate" type="string" />
+		<many-to-one name="user" column="userid" class="Hiber.Users"
+			not-null="true" />
+	</class>
+
+	<class name="Hiber.Order" table="orders">
+		<meta attribute="class-description">
+			This class contains the order detail.
+		</meta>
+		<id name="orderid" type="int" column="orderid">
+			<generator class="sequence">
+				<param name="sequence">SEQ_GEN_IDENTITY</param>
+			</generator>
+		</id>
+		<property name="sellingprice" column="sellingprice" type="double" />
+		<property name="tax" column="tax" type="double" />
+		<property name="shippingcost" column="shippingcost" type="double" />
+
+		<many-to-one name="invoice" column="invoiceid" class="Hiber.Invoice"
+			not-null="true" />
+		<many-to-one name="product" column="productid" class="Hiber.Product"
+			not-null="true" />
+	</class>
 </hibernate-mapping>

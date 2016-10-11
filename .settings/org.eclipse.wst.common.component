@@ -2,6 +2,7 @@
     <wb-module deploy-name="Samazon">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/UnitTest"/>
         <property name="context-root" value="Samazon"/>
         <property name="java-output-path" value="/Samazon/build/classes"/>
     </wb-module>
