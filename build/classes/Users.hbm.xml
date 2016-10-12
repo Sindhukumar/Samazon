@@ -45,7 +45,7 @@
 		</id>
 		<property name="invoicedate" column="invoicedate" type="string" />
 		<many-to-one name="user" column="userid" class="Hiber.Users"
-			not-null="true" />
+			not-null="true" lazy="false"/>
 	</class>
 
 	<class name="Hiber.Order" table="orders">
@@ -62,8 +62,8 @@
 		<property name="shippingcost" column="shippingcost" type="double" />
 
 		<many-to-one name="invoice" column="invoiceid" class="Hiber.Invoice"
-			not-null="true" />
+			not-null="true" lazy="false" />
 		<many-to-one name="product" column="productid" class="Hiber.Product"
-			not-null="true" />
+			not-null="true" lazy="false"/>
 	</class>
 </hibernate-mapping>

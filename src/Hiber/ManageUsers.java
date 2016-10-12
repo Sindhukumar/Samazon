@@ -13,25 +13,25 @@ public class ManageUsers {
 	public void testUser() {
 		ManageUsers ME = new ManageUsers();
 
-		/* Add few employee records in database */
+		/* Add few user records in database */
 		Integer u1 = ME.addUser("Zara", "customer", "pass", "u1@d.com");
 		Integer u2 = ME.addUser("Daisy", "customer", "pass", "u2@d.com");
 		Integer u3 = ME.addUser("John", "customer", "pass", "u3@d.com");
 
-		/* List down all the employees */
+		/* List down all the users */
 		ME.listUsers();
 
-		/* Update employee's records */
+		/* Update user's records */
 		ME.updateUser(u1, "n@d.com");
 
 		/* Delete an employee from the database */
 		ME.deleteUser(u2);
 
-		/* List down new list of the employees */
+		/* List down new list of the users */
 		ME.listUsers();
 	}
 
-	/* Method to CREATE an employee in the database */
+	/* Method to CREATE an user in the database */
 	public static Integer addUser(String username, String userrole, String userpassword, String useremail) {
 		Session session = Factory.getFactory().openSession();
 		Transaction tx = null;
@@ -51,7 +51,7 @@ public class ManageUsers {
 		return employeeID;
 	}
 
-	/* Method to READ all the employees */
+	/* Method to READ all the Users */
 	public void listUsers() {
 		Session session = Factory.getFactory().openSession();
 		Transaction tx = null;

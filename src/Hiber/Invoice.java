@@ -13,14 +13,19 @@ public class Invoice {
 		this.invoicedate = invoicedate;
 	}
 
-	Invoice() {
+	public Invoice() {
 
 	}
 
-	Invoice(Users user) {
+	public Invoice(Users user) {
 		this.user = user;
 	}
 
+	public Invoice(Users user, String invoicedate) {
+		this.user = user;
+		this.invoicedate = invoicedate;
+	}
+	
 	public int getInvoiceid() {
 		return invoiceid;
 	}

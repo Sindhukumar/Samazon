@@ -21,6 +21,7 @@
    <property name="hibernate.connection.password">
       ora1
    </property>
+   <property name="hibernate.enable_lazy_load_no_trans">true</property>
 
    <!-- List of XML mapping files -->
    <mapping resource="Users.hbm.xml"/>

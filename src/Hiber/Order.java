@@ -8,18 +8,25 @@ public class Order {
 	private double tax;
 	private double shippingcost;
 
-	Order() {
+	public Order() {
 
 	}
 
-	Order(Invoice invoice, Product product, double sellingprice, double tax, double shippingcost) {
+	public Order(Invoice invoice, Product product, double sellingprice, double tax, double shippingcost) {
 		this.invoice = invoice;
 		this.product = product;
 		this.sellingprice = sellingprice;
 		this.tax = tax;
 		this.shippingcost = shippingcost;
 	}
-
+	
+	public Order(Product product, double sellingprice, double tax, double shippingcost) {
+		this.product = product;
+		this.sellingprice = sellingprice;
+		this.tax = tax;
+		this.shippingcost = shippingcost;
+	}
+	
 	public int getOrderid() {
 		return orderid;
 	}

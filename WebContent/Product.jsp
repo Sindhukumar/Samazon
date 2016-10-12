@@ -30,7 +30,7 @@
 			</thead>
 			<tbody>
 
-				<img src="images/${currentproduct.productid}.png" />
+				<img src="images/${currentproduct.productid}.jpg" height="400" width="400"/>
 				<br>
 				<br>
 				<br>

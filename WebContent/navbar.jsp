@@ -28,8 +28,9 @@
 			</div>
 			<div id="navigation" class="collapse navbar-collapse navbar-right">
 				<ul class="nav navbar-nav">
-
 					<c:if test="${user!=null}">
+						<li><a href="Cart.jsp"><img alt="cart"
+								src="images/cart.png" height="30" width="30" />View Cart </a></li>
 						<li><a href="ProfileServlet?action=viewprofile"><img
 								alt="${user.username}" src="${gravatarURL}" height="30"
 								width="30" />&nbsp;${user.username}</a></li>
@@ -42,6 +43,7 @@
 						<%
 							}
 						%>
+						<li><a href="OrderHistory">Order History</a></li>
 						<li><a href="ProfileServlet?action=editprofile">Edit
 								Profile </a></li>
 

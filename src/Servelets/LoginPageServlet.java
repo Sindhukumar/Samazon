@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Hiber.Cart;
 import Hiber.Factory;
 import Hiber.ManageUsers;
 import Hiber.Users;
@@ -22,7 +23,6 @@ import Hiber.Users;
 @WebServlet("/LoginPageServlet")
 public class LoginPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -56,6 +56,8 @@ public class LoginPageServlet extends HttpServlet {
 		{
 			session.setAttribute("user", user);
 			session.setAttribute("gravatarURL", Factory.getGravatarURL(useremail, 50));
+			Cart cart =  new Cart(user);
+			session.setAttribute("cart", cart);
 			nextURL="/Home";
 		}
 
@@ -65,4 +67,6 @@ public class LoginPageServlet extends HttpServlet {
 		}
 		response.sendRedirect(request.getContextPath()+nextURL);
 	}
+
+	
 }
