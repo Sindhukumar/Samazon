@@ -100,7 +100,7 @@ public class ManageUsers {
 	}
 
 	/* Method to UPDATE salary for an employee */
-	public void updateUser(Integer userid, String useremail) {
+	public static void updateUser(Integer userid, String useremail) {
 		Session session = Factory.getFactory().openSession();
 		Transaction tx = null;
 		try {
@@ -117,9 +117,30 @@ public class ManageUsers {
 			session.close();
 		}
 	}
-
+	
+	public static void updateUser(Integer userid, String useremail,String userpassword, String username,String userrole) {
+		Session session = Factory.getFactory().openSession();
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			Users user = (Users) session.get(Users.class, userid);
+			user.setUseremail(useremail);
+			user.setUserpassword(userpassword);
+			user.setUsername(username);
+			user.setUserrole(userrole);
+			session.update(user);
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+	}
+	
 	/* Method to DELETE an employee from the records */
-	public void deleteUser(Integer userid) {
+	public static void deleteUser(Integer userid) {
 		Session session = Factory.getFactory().openSession();
 		Transaction tx = null;
 		try {

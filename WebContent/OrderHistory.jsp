@@ -15,10 +15,6 @@
 	<jsp:include page="navbar.jsp"></jsp:include>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 	<div class="container">
 
 		<b>Your Past Orders </b><br /> <br />

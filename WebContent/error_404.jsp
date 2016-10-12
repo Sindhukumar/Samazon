@@ -9,7 +9,7 @@
 <body>
 <h1>Congratulations! you broke it :)</h1>
 
-<h6> The page does not exist</h6>
+<h6> The page does not exist or under construction</h6>
 <h5>
 <a href="Home">Click here to continue...</a></h5>
 </body>

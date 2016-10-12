@@ -9,7 +9,7 @@ public class Cart {
 	private double subtotal;
 	private int numberoforders;
 	public int getNumberoforders() {
-		return numberoforders;
+		return orders.size();
 	}
 	public void setNumberoforders(int numberoforders) {
 		this.numberoforders = numberoforders;
